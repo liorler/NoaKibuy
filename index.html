@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>נועה כיבוי ורישוי</title>
+    <link rel="stylesheet" type="text/css" href="style/site.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes"/>
+    <script src="js/slideshow_control.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+
+
+    <script src="js/AppController.js"></script>
+    <script src="js/modal_control.js"></script>
+    <base href="/" />
+  </head>
+  <body ng-app="myApp">
+    <div ng-controller="myController" id="body-container">
+      <div id="fixed-mobile-icons-container">
+        <div id="whatsapp-icon" class="fixed-mobile-icon">
+          <a target="_blank" href="https://api.whatsapp.com/send?phone=972546638255">
+            <img src="images/whatsapp.png" alt="" title="שלח לנו הודעה בווטסאפ">
+          </a>
+        </div>
+        <div id="facebook-icon" class="fixed-mobile-icon">
+          <a target="_blank" href="https://www.facebook.com/noa.firesafty/?timeline_context_item_type=intro_card_work&timeline_context_item_source=100001624221222">
+            <img src="images/facebook.png" alt="" title="חפש אותנו בפייסבוק">
+          </a>
+        </div>
+        <!-- <div id="phone-icon" class="fixed-mobile-icon">
+          <a href="tel:{{globalData.cellPhone}}">
+            <img src="images/phone.png" alt="" title="התקשר אלינו">
+          </a>
+        </div> -->
+      </div>
+      <header>
+        <div id="logo">
+          <img src="images/logo.jpg" alt="">
+        </div>
+        <!-- <div class="left-header">
+          <div class="facebook-link">
+            <a target="_blank" href="https://www.facebook.com/noa.firesafty/?timeline_context_item_type=intro_card_work&timeline_context_item_source=100001624221222">
+              <i class="fa fa-facebook-square" title="חפש אותנו בפייסבוק"></i>
+            </a>
+          </div>
+          <div class="whatsapp-link">
+            <a target="_blank" href="https://api.whatsapp.com/send?phone=972546638255">
+              <img src="images/whatsapp-icon.png" alt="" title="שלח לנו הודעה בווטסאפ">
+            </a>
+          </div>
+        </div> -->
+        <div id="phone">
+          <a href="tel:{{globalData.cellPhone}}">
+            <!-- <img id="phoneIcon" src="images/phone_icon.png" alt=""> -->
+            <div id="phone-inside-container">
+              <div id="phoneGreet">לייעוץ חינם התקשרו </div>
+              <div id="phoneNumber" class="tel" ng-bind="globalData.cellPhone"></div>
+            </div>
+          </a>
+        </div>
+      </header>
+      <div class="menu-wrap">
+        <nav class="menu">
+          <ul class="clearfix">
+            <li><a href="" class="menu-item" ng-click="nav($event)" id="route_Contact">צור קשר</a></li>
+            <li><a href="" class="menu-item" ng-click="nav($event)" id="route_Recommendations">המלצות</a></li>
+            <li><a href="" class="menu-item" ng-click="nav($event)" id="route_Projects">פרוייקטים נבחרים</a></li>
+            <li><a href="" class="menu-item" ng-click="nav($event)" id="route_FireSafety">בטיחות אש</a></li>
+            <li><a href="" class="menu-item" ng-click="nav($event)" id="route_BusinessLicensing">רישיון עסק</a></li>
+            <!-- <li class="fix-sub-menu-li">
+              <div href="" ng-click="openSubMenu()">
+                <span class="menu-item sub-menu-title" id="non-clicked-li">תחומי פעילות</span>
+                <span class="sub-menu-icon">
+                   <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                </span>
+              </div>
+              <ul class="sub-menu">
+                <li><a href="" class="menu-item sub-menu-item" ng-click="nav($event)" id="route_FireSafety">בטיחות אש</a></li>
+                <li><a href="" class="menu-item sub-menu-item" ng-click="nav($event)" id="route_BusinessLicensing">רישוי עסקים</a></li>
+              </ul>
+            </li> -->
+            <li><a href="" class="menu-item" ng-click="nav($event)" id="route_Certificates" >תעודות הסמכה</a></li>
+            <li><a href="" class="menu-item" ng-click="nav($event)" id="route_About">אודות</a></li>
+            <li class="current_page"><a href="" class="menu-item current_page" ng-click="nav($event)" id="route_Home">עמוד הבית</a></li>
+            <li id="submenu-button" ng-click="openMobileMenu($event)">
+              <a href="javascript:void(0);" class="ham-icon menu-item">
+                <div class="navTrigger">
+                  <i></i><i></i><i></i>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div id="contact-form-container" ng-cloak ng-if="showContact">
+        <div id="contact-form">
+          <div class="close-contact" ng-click="showContactDiv()">X</div>
+          <form class="" ng-submit="sendMailForm()">
+            <div class="label-container first-label-container"><label for="fname">שם מלא</label></div>
+            <div class="input-container"><input type="text" id="input-name" name="fullname" required></div>
+            <div class="label-container"><label for="lname">כתובת דוא"ל</label></div>
+            <div class="input-container"><input type="email" id="input-mail" name="email" required></div>
+            <div class="label-container"><label for="lname">טלפון</label></div>
+            <div class="input-container"><input type="tel" id="input-phone" name="phone" required></div>
+            <div class="label-container"><label for="lname">נושא הפנייה</label></div>
+            <div class="subject-container"><textarea rows="3" cols="20" type="text" id="input-comments" name="subject"></textarea></div>
+            <div class="input-container"><button type="submit" id="submit-button">שלח</button></div>
+          </form>
+        </div>
+      </div>
+      <div id="side-contact">
+        <div class="small-side-container">
+          <div class="small-side" ng-click="showContactDiv()">צור קשר</div>
+        </div>
+      </div>
+      <main>
+        <div ng-view ></div>
+      </main>
+      <footer>
+        <div class="footer-content">
+          <div class="bottom-info">
+            <div class="bottom-info-row fix-margin-info-row">
+              <div class="bottom-info-icons"><i class="fa fa-map-marker bottom-info-icon"></i></div>
+              <div class="bottom-info-text" ng-bind="globalData.address"></div>
+            </div>
+            <div class="bottom-info-row">
+              <div class="bottom-info-icons"><i class="fa fa-phone bottom-info-icon"></i></div>
+              <div class="bottom-info-text" ng-bind="globalData.phone"></div>
+            </div>
+            <div class="bottom-info-row" title="fax">
+              <div class="bottom-info-icons"><i class="fa fa-fax bottom-info-icon"></i></div>
+              <div class="bottom-info-text" ng-bind="globalData.fax"></div>
+            </div>
+
+            <div class="bottom-info-row">
+              <div class="bottom-info-icons"><i class="fa fa-envelope-o bottom-info-icon"></i></div>
+              <div class="bottom-info-text" ng-bind="globalData.mail"></div>
+            </div>
+          </div>
+          <div class="rects"><img src="images/rectangels.png"></div>
+        </div>
+        <div id="site_builder">
+          האתר נבנה ע"י ליאור לרנר &copy;
+        </div>
+      </footer>
+    </div>
+
+
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<div class="big_container">
+  <!-- The Modal -->
+  <div id="certificatesModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+  </div>
+
+  <div class="container-desktop-mode container-mobile-mode">
+    <div id="certificates">
+      <div ng-repeat="certificate in certificates" class="certificate-container" onclick="openModalCer(this)">
+        <img src="{{certificate}}" alt="">
+      </div>
+    </div>
+  </div>
+</div>

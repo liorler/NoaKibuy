@@ -1,0 +1,43 @@
+<div class="big_container">
+  <div id="contact-info" class="container-desktop-mode container-mobile-mode">
+    <div class="top-media-container">
+      <!-- <iframe class="media" type="text/html" src="https://www.youtube.com/embed/bozEI-Aydqs?autoplay=1&loop=1&playlist=bozEI-Aydqs&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+      <iframe src="https://www.youtube.com/embed/BCoskfpc0Ig?rel=0&amp;showinfo=0;" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <!-- <video class="media" controls loop autoplay>
+        <source src="./movie.mp4" type="video/mp4">
+      </video> -->
+    </div>
+    <div class="right-contact-input">
+      <div class="contact-title-message">
+        <span class="contact-title">יצירת קשר</span><br>
+        <span class="contact-message">השדות המסומנים ב * הינם שדות חובה</span>
+      </div>
+      <form class="" name="contactForm" ng-submit="sendMailForm()">
+        <div><input class="contact-input" id="input-name" name="name" placeholder="*שם מלא" value="" required></div>
+        <div><input class="contact-input" id="input-phone" type="tel" name="phone" placeholder="*מספר טלפון" value="" required></div>
+        <div><input class="contact-input" id="input-mail" name="email" type="email" placeholder="*דואר" value="" required></div>
+        <textarea class="contact-input contact-input-comments" name="comments" id="input-comments" placeholder=" הערות" value=""></textarea>
+        <div class="submit-button-container"><button type="submit" id="submit-button">שלח</button></div>
+      </form>
+      <div id="response-form"></div>
+    </div>
+    <div class="left-contact-info">
+        <div class="contact-info-row">
+          <span class="contact-square"><i class="fa fa-map-marker contact-icon"></i></span>
+          <span class="contact-static-info" ng-bind="globalData.address"></span>
+        </div>
+        <div class="contact-info-row">
+          <span class="contact-square"><i class="fa fa-phone contact-icon"></i></span>
+          <span class="contact-static-info" ng-bind="globalData.phone"></span>
+        </div>
+        <div class="contact-info-row">
+          <span class="contact-square"><i class="fa fa-fax contact-icon"></i></span>
+          <span class="contact-static-info" ng-bind="globalData.fax"></span>
+        </div>
+        <div class="contact-info-row">
+          <span class="contact-square"><i class="fa fa-envelope-o contact-icon"></i></span>
+          <span class="contact-static-info contact-static-info-bold" ng-bind="globalData.mail"></span>
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="big_container">
+
+
+  <!-- The Modal -->
+  <div id="recModal" class="modal">
+    <span class="close">&times;</span>
+    <!-- <div class="modal-content-container"> -->
+      <img class="modal-content" id="img01">
+    <!-- </div> -->
+    <div id="caption"></div>
+  </div>
+
+  <div class="container-desktop-mode container-mobile-mode" id="costumer-page">
+
+    <div class="top-img">
+      <img src="images/top-img-recs.jpg" alt="">
+    </div>
+
+    <div class="media-area" id="rec-media">
+      <div class="slideshow-container">
+        <div class="w3-content">
+          <!-- <div class="mySlides" id="solid-slide" onclick="openModalRec(this)">
+            <div class="img-container">
+              <img src="images/recommendations/rec_1.jpg" alt="" id="myImg">
+            </div>
+            <div class="bottom-text">יוסי ברקי</div>
+          </div> -->
+          <div class="mySlides" id="rightSlide" onclick="openModalRec(this)">
+            <div class="img-container">
+              <img src="images/recommendations/rec_3.jpg" alt="" id="myImg">
+            </div>
+            <div class="bottom-text">אירו-סאט השקעות</div>
+          </div>
+          <div class="mySlides" id="middleSlide" onclick="openModalRec(this)">
+            <div class="img-container">
+              <img src="images/recommendations/rec_2.jpg" alt="" id="myImg">
+            </div>
+            <div class="bottom-text">אליעזר צור</div>
+          </div>
+          <div class="mySlides" id="leftSlide" onclick="openModalRec(this)">
+            <div class="img-container">
+              <img src="images/recommendations/rec_1.jpg" alt="" id="myImg">
+            </div>
+            <div class="bottom-text">יוסי ברקי</div>
+          </div>
+        </div>
+
+        <!-- <div class="w3-center"></div> -->
+      </div>
+      <div class="w3-section">
+        <!-- <button class="slideshow-btn" id="slideshow-btn-right" onclick="plusRec('rec')"><img src="images/arrow-right.png" alt="next" title="next"></button>
+        <button class="slideshow-btn" id="slideshow-btn-left" onclick="minusRec('rec')"><img src="images/arrow-left.png" alt="previous" title="previous"></button> -->
+        <button class="w3-button" onclick="ChangeMediaObj('rec',1)">&#10094; הבא</button>
+        <button class="w3-button" onclick="ChangeMediaObj('rec',-1)">הקודם &#10095;</button>
+      </div>
+    </div>
+
+  </div>
+</div>
